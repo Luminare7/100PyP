@@ -4,8 +4,6 @@ import art
 from game_data import data
 import random
 
-print(art.logo)
-
 
 score = 0
 
@@ -17,7 +15,8 @@ def comparer(choice_one, choice_two):
         return choice_two
 
 
-def play_game(score):
+def play_game(new_score):
+    print(art.logo)
     game_continues = True
     while game_continues:
         alt_one_index = random.randint(0, 49)
@@ -34,17 +33,17 @@ def play_game(score):
         else:
             picked_account = alt_two
         if picked_account == right_alt:
-            score += 1
+            new_score += 1
             print("Well done! On to the next")
             game_continues = True
         else:
             print("Oh no!")
-            print(f"You scored {score} points!")
+            print(f"You scored {new_score} points!")
             game_continues = False
     again = input("Do you want to play again? Type 'yes' or 'no' ")
     if again == "yes":
-        score = 0
-        play_game(score)
+        new_score = 0
+        play_game(new_score)
     else:
         print("Goodbye")
 
