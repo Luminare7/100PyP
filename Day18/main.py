@@ -4,7 +4,7 @@ from turtle import Turtle, Screen
 import random
 import colorgram
 
-Width, Height = 650, 650
+Width, Height = 475, 475
 Screen().setworldcoordinates(-20, -20,  Width, Height )
 
 colors = colorgram.extract('hirst_spots.jpg', 30)
@@ -29,18 +29,18 @@ tim.penup()
 def draw_dot_line():
     dot_color = random.choice(used_colors)
     tim.dot(20, dot_color)
-    tim.forward(70)
+    tim.forward(50)
     x_pos = tim.pos()[0]
 
 
 def move_up():
-    step = 70
+    step = 50
     y_pos = (tim.pos()[1] + step)
     tim.goto(0, y_pos)
 
 
-while tim.pos()[1] <= 630:
-    while tim.pos()[0] <= 630:
+while tim.pos()[1] <= 450:
+    while tim.pos()[0] <= 450:
         draw_dot_line()
     move_up()
 
